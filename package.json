@@ -1,0 +1,14 @@
+{
+  "name": "polymer-test",
+  "flat": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@polymer/polymer": "next",
+    "@webcomponents/webcomponentsjs": "^1.1.0"
+  },
+  "resolutions": {
+    "@webcomponents/webcomponentsjs": "1.1.0"
+  }
+}
