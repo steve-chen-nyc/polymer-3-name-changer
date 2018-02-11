@@ -10,7 +10,29 @@
     <script type="module" src="src/app.js"></script>
   </head>
   <body>
-      <name-changer></name-changer>
-      <name-changer read-only></name-changer>
+      <!-- <name-changer></name-changer>
+      <name-changer read-only></name-changer> -->
   </body>
+  <script>
+      let people = [
+          {
+              name: "Steve Chen",
+              readOnly: false
+          },
+          {
+              name: "Teri Joe",
+              readOnly: true
+          }
+      ];
+
+      people.forEach((person, idx) => {
+          let nameChangerElement = document.createElement("name-changer");
+
+          nameChangerElement.name = person.name;
+          nameChangerElement.readOnly = person.readOnly;
+          nameChangerElement.classList.add(`name-changer-${idx}`)
+          document.body.appendChild(nameChangerElement);
+      });
+
+  </script>
 </html>

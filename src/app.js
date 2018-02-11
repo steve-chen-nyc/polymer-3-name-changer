@@ -17,7 +17,6 @@ class NameChanger extends PolymerElement {
             },
             readOnly: {
                 type: Boolean,
-                value: false,
                 reflectToAttribute: true
             }
         }
