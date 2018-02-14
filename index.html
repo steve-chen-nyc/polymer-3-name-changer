@@ -6,7 +6,7 @@
         src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js">
     </script>
 
-    <!-- Import the my-app element's module. -->
+    <!-- Import element's module. -->
     <script type="module" src="src/app.js"></script>
   </head>
   <body>
@@ -14,13 +14,14 @@
       <name-changer read-only></name-changer> -->
   </body>
   <script>
+      // Creates elements dynamically
       let people = [
           {
               name: "Steve Chen",
               readOnly: false
           },
           {
-              name: "Teri Joe",
+              name: "David Ashe",
               readOnly: true
           }
       ];
