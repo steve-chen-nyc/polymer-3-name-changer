@@ -25,11 +25,11 @@ export function apiConfig(name) {
 
 ### Demo
 ```
-    <name-changer name="Douglas Crockford" readonly></name-changer>
+    <name-changer name="Douglas Crockford" read-only></name-changer>
 ```
 
 ### Attributes
 ```
     1. name="name" - optional. Default = "You Guyzzz"
-    2. readonly - optional
+    2. read-only - optional
 ```

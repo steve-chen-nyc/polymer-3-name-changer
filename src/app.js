@@ -15,11 +15,13 @@ class NameChanger extends PolymerElement {
                 type: String,
                 value: "You Guyzzz",
                 reflectToAttribute: true,
+                observer: '_fetchGiphy'
             },
             readOnly: {
                 type: Boolean,
                 value: false,
-                reflectToAttribute: true
+                reflectToAttribute: true,
+                observer: '_handleReadOnly'
             }
         }
     }
@@ -28,19 +30,12 @@ class NameChanger extends PolymerElement {
         return getTemplate();
     }
 
-    static get observers() {
-        return [
-            '_fetchGiphy(name)',
-            '_handleReadOnly(readOnly)'
-        ]
-    }
-
     ready() {
         super.ready();
         this._setupClickHandler();
     }
 
-    _fetchGiphy(name) {
+    _fetchGiphy(name, oldName) {
         const url = api(name);
 
         fetch(url).then((response) => {
@@ -66,8 +61,8 @@ class NameChanger extends PolymerElement {
         inputValue.value = "";
     }
 
-    _handleReadOnly(changeRecord) {
-        if (changeRecord) {
+    _handleReadOnly(newValue, oldValue) {
+        if (newValue) {
             this.shadowRoot.querySelector('button').remove();
             this.shadowRoot.querySelector('input').remove();
         }
