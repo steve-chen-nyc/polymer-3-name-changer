@@ -5,35 +5,36 @@
     <script
         src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js">
     </script>
-
     <!-- Import element's module. -->
     <script type="module" src="src/app.js"></script>
+    <style>
+        .container {
+            width: 100%;
+            display: inline-flex;
+            justify-content: space-around;
+        }
+        /*Custom CSS Props*/
+        name-changer {
+            --button-color: green;
+        }
+    </style>
   </head>
   <body>
-      <!-- <name-changer></name-changer>
-      <name-changer read-only></name-changer> -->
+      <div class="container">
+          <name-changer name="steve"></name-changer>
+      </div>
   </body>
   <script>
       // Creates elements dynamically
-      let people = [
-          {
-              name: "Steve Chen",
-              readOnly: false
-          },
-          {
-              name: "David Ashe",
-              readOnly: true
-          }
-      ];
-
-      people.forEach((person, idx) => {
-          let nameChangerElement = document.createElement("name-changer");
-
-          nameChangerElement.name = person.name;
-          nameChangerElement.readOnly = person.readOnly;
-          nameChangerElement.classList.add(`name-changer-${idx}`)
-          document.body.appendChild(nameChangerElement);
-      });
-
+      // const bootCampSpeakers = [{name: "Steve Chen", readOnly: false},
+      //                           {name: "David Ashe", readOnly: true}];
+      //
+      // bootCampSpeakers.forEach((person) => {
+      //     let nameChangerElement = document.createElement("name-changer");
+      //     let container = document.querySelector('.container');
+      //     nameChangerElement.name = person.name;
+      //     nameChangerElement.readOnly = person.readOnly;
+      //     container.appendChild(nameChangerElement);
+      // });
   </script>
 </html>

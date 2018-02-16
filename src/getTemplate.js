@@ -10,13 +10,13 @@ export default function() {
                 margin: 0 auto;
                 text-align: center;
                 position: relative;
-                top: 250px;
+                top: 50px;
             }
 
             button {
                 -webkit-appearance: none;
                 background-color: #d2d2d2;
-                color: #fff;
+                color: var(--button-color);
                 font-size: 14px;
                 width: 100px;
                 height: 50px;
@@ -30,11 +30,20 @@ export default function() {
                 font-family: arial;
                 color: #d2d2d2;
             }
+
+            img {
+                width: 428px;
+            }
+
+            slot div {
+                padding-top: 20px;
+            }
         </style>
 
         <div class="main-container">
-            <h1> Hello World!  <b>{{name}}</b>. </h1>
-            <input></input><button> Click Me </button>
+            <h1> Hello World! <b>{{name}}</b>.</h1>
+            <input></input>
+            <button> Click Me </button>
             <slot></slot>
         </div>
     `
