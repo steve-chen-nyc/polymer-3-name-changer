@@ -6,7 +6,7 @@ Learning how to create web components with polymer 3.0 &amp; JS ES6 Modules. Cre
 ## Getting Started And Installation
 1. Run `yarn install` from project directory.  
 2. Run `polymer serve` to start local web server.
-3. Goto `localhost:8080` to view demo.
+3. Goto `http://127.0.0.1:8081` to view demo.
 4. Create a `config.js` file in the src directory and include function below.
 ```
 export function apiConfig(name) {
