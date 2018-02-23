@@ -41,7 +41,7 @@ export default function() {
         </style>
 
         <div class="main-container">
-            <h1> Hello World! <b>{{name}}</b>.</h1>
+            <h1> Hello World! <b>[[name]]</b>.</h1>
             <input></input>
             <button> Click Me </button>
             <slot></slot>

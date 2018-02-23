@@ -2,3 +2,4 @@ node_modules/
 yarn.lock
 api.js
 build/
+bower_components

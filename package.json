@@ -10,5 +10,6 @@
   },
   "resolutions": {
     "@webcomponents/webcomponentsjs": "1.1.0"
-  }
+  },
+  "devDependencies": {}
 }

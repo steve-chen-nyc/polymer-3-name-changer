@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+      <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="../../web-component-tester/browser.js"></script>
+        <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+        <script type="module" src="../src/app.js"></script>
+    </head>
+
+    <body>
+        <name-changer id="fixture" name="steve"></name-changer>
+
+        <script>
+          suite('<name-changer> custom element', function() {
+                var nameChanger, name;
+                setup(function() {
+                    nameChanger = document.querySelector('#fixture');
+                });
+                test('name changer element exists', function(){
+                    expect(nameChanger).to.exist;
+                });
+                test('name prop should be in h1 tag', function(done) {
+                    // flush ensures that asynchronous changes have taken place.
+                    // needed for local dom manipulation.
+                    flush(function() {
+                        name = nameChanger.shadowRoot.querySelector('h1').textContent;
+                        expect(name.toLowerCase()).to.have.string('steve');
+                        done();
+                    });
+                });
+                test('change name prop and check h1 tag', function(done) {
+                    nameChanger.name = "david"
+
+                    flush(function() {
+                        name = nameChanger.shadowRoot.querySelector('h1').textContent;
+                        expect(name.toLowerCase()).to.have.string('david');
+                        done();
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

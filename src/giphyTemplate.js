@@ -1,7 +1,7 @@
-export default function(giphy) {
+export default function(giphyUrl) {
     return `
         <div>
-            <img src="${giphy}">
+            <img src="${giphyUrl}">
         </div>
     `
 }

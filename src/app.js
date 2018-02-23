@@ -4,11 +4,6 @@ import getTemplate from "./getTemplate.js"
 import giphyTemplate from "./giphyTemplate.js"
 
 class NameChanger extends PolymerElement {
-    constructor() {
-        super();
-        this._handleNameChange = this._handleNameChange.bind(this);
-    }
-
     static get properties() {
         return {
             name: {
@@ -30,6 +25,8 @@ class NameChanger extends PolymerElement {
         return getTemplate();
     }
 
+    // shadow dom, sets up data systems & binding
+    // sets up observers
     ready() {
         super.ready();
         this._setupClickHandler();
@@ -71,9 +68,12 @@ class NameChanger extends PolymerElement {
     _setupClickHandler() {
         let button = this.shadowRoot.querySelector('button');
         if (button) {
-            button.addEventListener('click', this._handleNameChange);
+            button.addEventListener('click', () => {
+                this._handleNameChange();
+            });
         }
     }
 }
 
+// method to define and register a new custom
 customElements.define('name-changer', NameChanger);
